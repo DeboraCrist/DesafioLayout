@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'ui/estilo/estilotexto.dart';
 import 'ui/elementos/cards.dart';
 import 'ui/estilo/cores.dart';
+import 'ui/elementos/botao.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
-  int _currentIndex = 0;
+  int _indiceAtual = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +83,12 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ),
         ),
         bottomNavigationBar: BottomNavyBar(
-          selectedIndex: _currentIndex,
+          selectedIndex: _indiceAtual,
           showElevation: false,
           itemCornerRadius: 15,
           backgroundColor: Colors.white,
           curve: Curves.easeIn,
-          onItemSelected: (index) => setState(() => _currentIndex = index),
+          onItemSelected: (index) => setState(() => _indiceAtual = index),
           items: [
             BottomNavyBarItem(
               icon: const Icon(
