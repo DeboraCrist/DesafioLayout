@@ -1,13 +1,22 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'ui/estilo/estilotexto.dart';
 import 'ui/elementos/cards.dart';
+import 'ui/estilo/cores.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -72,34 +81,53 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        bottomNavigationBar: BottomNavyBar(
+          selectedIndex: _currentIndex,
+          showElevation: false,
+          itemCornerRadius: 15,
+          backgroundColor: Colors.white,
+          curve: Curves.easeIn,
+          onItemSelected: (index) => setState(() => _currentIndex = index),
+          items: [
+            BottomNavyBarItem(
+              icon: const Icon(
+                Icons.home,
+                size: 30,
+              ),
+              title: Text(
+                "Home",
+                style: TextoStyles.textoSimples,
+              ),
+              activeColor: Colores.primaria,
+              textAlign: TextAlign.center,
+            ),
+            BottomNavyBarItem(
+                icon: const Icon(Icons.shop_2, size: 30),
+                title: Text(
+                  "Loja",
+                  style: TextoStyles.textoSimples,
+                ),
+                activeColor: Colores.primaria,
+                textAlign: TextAlign.center),
+            BottomNavyBarItem(
+                icon: const Icon(Icons.people_alt, size: 30),
+                title: Text(
+                  "Pessoas",
+                  style: TextoStyles.textoSimples,
+                ),
+                activeColor: Colores.primaria,
+                textAlign: TextAlign.center),
+            BottomNavyBarItem(
+                icon: const Icon(Icons.escalator, size: 30),
+                title: Text(
+                  "Dados",
+                  style: TextoStyles.textoSimples,
+                ),
+                activeColor: Colores.primaria,
+                textAlign: TextAlign.center),
+          ],
+        ),
       ),
-    );
-  }
-}
-
-class CircularButton extends StatelessWidget {
-  const CircularButton(
-      {Key? key,
-      required this.width,
-      required this.height,
-      required this.color,
-      required this.icon,
-      required this.onClick})
-      : super(key: key);
-
-  final double width;
-  final double height;
-  final Color color;
-  final Icon icon;
-  final VoidCallback onClick;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-      width: width,
-      height: height,
-      child: IconButton(icon: icon, enableFeedback: true, onPressed: onClick),
     );
   }
 }
