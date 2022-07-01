@@ -1,7 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'ui/estilo/estilotexto.dart';
-import 'ui/elementos/cards.dart';
+import 'ui/elementos/card1.dart';
+import 'ui/elementos/card2.dart';
 import 'ui/estilo/cores.dart';
 import 'ui/elementos/botao.dart';
 
@@ -83,8 +84,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ),
         ),
         bottomNavigationBar: BottomNavyBar(
-          selectedIndex: _indiceAtual,
           showElevation: false,
+          selectedIndex: _indiceAtual,
           itemCornerRadius: 15,
           backgroundColor: Colors.white,
           curve: Curves.easeIn,
@@ -99,8 +100,9 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 "Home",
                 style: TextoStyles.textoSimples,
               ),
-              activeColor: Colores.primaria,
               textAlign: TextAlign.center,
+              //cor da logo
+              activeColor: Colores.primaria,
             ),
             BottomNavyBarItem(
                 icon: const Icon(Icons.shop_2, size: 30),
@@ -108,24 +110,24 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   "Loja",
                   style: TextoStyles.textoSimples,
                 ),
-                activeColor: Colores.primaria,
-                textAlign: TextAlign.center),
+                textAlign: TextAlign.center,
+                activeColor: Colores.primaria),
             BottomNavyBarItem(
                 icon: const Icon(Icons.people_alt, size: 30),
                 title: Text(
                   "Pessoas",
                   style: TextoStyles.textoSimples,
                 ),
-                activeColor: Colores.primaria,
-                textAlign: TextAlign.center),
+                textAlign: TextAlign.center,
+                activeColor: Colores.primaria),
             BottomNavyBarItem(
                 icon: const Icon(Icons.escalator, size: 30),
                 title: Text(
                   "Dados",
                   style: TextoStyles.textoSimples,
                 ),
-                activeColor: Colores.primaria,
-                textAlign: TextAlign.center),
+                textAlign: TextAlign.center,
+                activeColor: Colores.primaria),
           ],
         ),
       ),

@@ -13,8 +13,10 @@ class Carde1 extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(17),
+          borderRadius: BorderRadius.circular(20),
           color: Colores.carde,
+
+          //borda do fundo
           boxShadow: [
             BoxShadow(
               color: const Color.fromARGB(255, 170, 167, 170).withOpacity(0.8),
@@ -25,28 +27,29 @@ class Carde1 extends StatelessWidget {
           ]),
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 12,
-          bottom: 12,
-          right: 22,
-          left: 22,
+          top: 8,
+          bottom: 8,
+          right: 25,
+          left: 25,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "$_pedidos",
                   style: TextoStyles.numeroMenor,
                 ),
+                const SizedBox(height: 8),
                 const Icon(
                   Icons.shop_2,
-                  size: 45,
+                  size: 47,
                   color: Colores.primaria,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text("novos", style: TextoStyles.textoSimples),
                     Text("pedidos", style: TextoStyles.textoSimples)
@@ -62,12 +65,16 @@ class Carde1 extends StatelessWidget {
                   "$_clientes",
                   style: TextoStyles.numeroMenor,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 const Icon(
                   Icons.people_alt,
                   size: 45,
                   color: Colores.primaria,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text("novos", style: TextoStyles.textoSimples),
                     Text("clientes", style: TextoStyles.textoSimples)
@@ -83,64 +90,21 @@ class Carde1 extends StatelessWidget {
                   "$_cidades",
                   style: TextoStyles.numeroMenor,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 const Icon(
                   Icons.location_city,
                   size: 45,
                   color: Colores.primaria,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text("novas", style: TextoStyles.textoSimples),
                     Text("cidades", style: TextoStyles.textoSimples)
                   ],
                 )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Carde2 extends StatelessWidget {
-  const Carde2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    double _quantia = 34000;
-
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(17),
-          color: Colores.carde,
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 170, 167, 170).withOpacity(0.8),
-              blurRadius: 2,
-              spreadRadius: 2,
-              offset: const Offset(2, 2),
-            )
-          ]),
-      child: Padding(
-        padding:
-            const EdgeInsets.only(top: 38, bottom: 38, right: 28, left: 28),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Icon(
-              Icons.shop_2,
-              size: 65,
-              color: Colores.primaria,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "R\$ ${_quantia}0",
-                  style: TextoStyles.dinheiro,
-                ),
-                Text("em novos pedidos", style: TextoStyles.textodinheiro),
               ],
             )
           ],

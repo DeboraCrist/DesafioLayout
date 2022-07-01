@@ -13,13 +13,16 @@ class TextoStyles {
       fontSize: 65, color: Colores.primaria, fontWeight: FontWeight.bold);
 
   static final numeroMenor = GoogleFonts.concertOne(
-      fontSize: 25, color: Colores.detalhes, fontWeight: FontWeight.w500);
+    fontSize: 20,
+    color: Color.fromARGB(255, 95, 93, 107),
+    fontWeight: FontWeight.w200,
+  );
 
   static final textoSimples = GoogleFonts.patrickHand(
-      fontSize: 20, color: Colores.secondaria, fontWeight: FontWeight.w500);
+      fontSize: 20, color: Colores.secondaria, fontWeight: FontWeight.w700);
 
   static final textodinheiro = GoogleFonts.patrickHand(
-      fontSize: 22, color: Colores.primaria, fontWeight: FontWeight.w500);
+      fontSize: 22, color: Colores.primaria, fontWeight: FontWeight.w700);
 
   static final dinheiro =
       GoogleFonts.concertOne(fontSize: 29, color: Colores.secondaria);
