@@ -14,7 +14,7 @@ class TextoStyles {
 
   static final numeroMenor = GoogleFonts.concertOne(
     fontSize: 20,
-    color: Color.fromARGB(255, 95, 93, 107),
+    color: Colores.olho,
     fontWeight: FontWeight.w200,
   );
 
@@ -25,5 +25,5 @@ class TextoStyles {
       fontSize: 22, color: Colores.primaria, fontWeight: FontWeight.w700);
 
   static final dinheiro =
-      GoogleFonts.concertOne(fontSize: 29, color: Colores.secondaria);
+      GoogleFonts.concertOne(fontSize: 35, color: Colores.secondaria);
 }

@@ -3,7 +3,9 @@ import 'package:prova_application_1/ui/estilo/cores.dart';
 import 'package:prova_application_1/ui/estilo/estilotexto.dart';
 
 class Carde1 extends StatelessWidget {
-  const Carde1({Key? key}) : super(key: key);
+  final bool esconderDados;
+
+  const Carde1({Key? key, required this.esconderDados}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,16 @@ class Carde1 extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  "$_pedidos",
-                  style: TextoStyles.numeroMenor,
-                ),
+                if (esconderDados)
+                  Text(
+                    "*",
+                    style: TextoStyles.numeroMenor,
+                  )
+                else
+                  Text(
+                    "$_pedidos",
+                    style: TextoStyles.numeroMenor,
+                  ),
                 const SizedBox(height: 8),
                 const Icon(
                   Icons.shop_2,
@@ -61,10 +69,16 @@ class Carde1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "$_clientes",
-                  style: TextoStyles.numeroMenor,
-                ),
+                if (esconderDados)
+                  Text(
+                    "*",
+                    style: TextoStyles.numeroMenor,
+                  )
+                else
+                  Text(
+                    "$_clientes",
+                    style: TextoStyles.numeroMenor,
+                  ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -86,10 +100,16 @@ class Carde1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "$_cidades",
-                  style: TextoStyles.numeroMenor,
-                ),
+                if (esconderDados)
+                  Text(
+                    "*",
+                    style: TextoStyles.numeroMenor,
+                  )
+                else
+                  Text(
+                    "$_cidades",
+                    style: TextoStyles.numeroMenor,
+                  ),
                 const SizedBox(
                   height: 10,
                 ),

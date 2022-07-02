@@ -19,6 +19,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   int _indiceAtual = 0;
+  Icon _olhoEsconde = const Icon(Icons.visibility);
+  bool aoclicar = false;
 
   @override
   Widget build(BuildContext context) {
@@ -65,18 +67,42 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                         'Parabéns! Esse mês você fez',
                         style: TextoStyles.textoSimples,
                       ),
+                      IconButton(
+                        icon: _olhoEsconde,
+                        iconSize: 35,
+                        color: Colores.olho,
+                        onPressed: () {
+                          setState(() => {
+                                if (!aoclicar)
+                                  {
+                                    _olhoEsconde =
+                                        const Icon(Icons.visibility_off),
+                                    aoclicar = true
+                                  }
+                                else
+                                  {
+                                    _olhoEsconde = const Icon(Icons.visibility),
+                                    aoclicar = false
+                                  }
+                              });
+                        },
+                      )
                     ],
+                  ),
+                  Carde1(
+                    esconderDados: aoclicar,
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Carde2(
+                    esconderDados: aoclicar,
+                  ),
+                  const SizedBox(
+                    height: 150,
                   ),
                   const SizedBox(
                     height: 10,
-                  ),
-                  const Carde1(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Carde2(),
-                  const SizedBox(
-                    height: 20,
                   ),
                 ],
               ),

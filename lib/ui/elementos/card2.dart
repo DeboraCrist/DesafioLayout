@@ -3,11 +3,13 @@ import 'package:prova_application_1/ui/estilo/cores.dart';
 import 'package:prova_application_1/ui/estilo/estilotexto.dart';
 
 class Carde2 extends StatelessWidget {
-  const Carde2({Key? key}) : super(key: key);
+  final bool esconderDados;
+
+  const Carde2({Key? key, required this.esconderDados}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double _quantia = 34000;
+    double _quantia = 34000.00;
 
     return Container(
       decoration: BoxDecoration(
@@ -35,11 +37,16 @@ class Carde2 extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  "R\$ ${_quantia}0",
-                  style: TextoStyles.dinheiro,
-                ),
-                Text("em novos pedidos", style: TextoStyles.textodinheiro),
+                esconderDados
+                    ? Text(
+                        "R\$ _,__",
+                        style: TextoStyles.dinheiro,
+                      )
+                    : Text(
+                        "R\$ ${_quantia}0",
+                        style: TextoStyles.dinheiro,
+                      ),
+                Text("em novos pedidos", style: TextoStyles.textodinheiro)
               ],
             )
           ],
