@@ -16,7 +16,7 @@ class Carde1 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colores.carde,
+          color: Cores.carde,
 
           //borda do fundo
           boxShadow: [
@@ -54,7 +54,7 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.shop_2,
                   size: 47,
-                  color: Colores.primaria,
+                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,7 +85,7 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.people_alt,
                   size: 45,
-                  color: Colores.primaria,
+                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +116,7 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.location_city,
                   size: 45,
-                  color: Colores.primaria,
+                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

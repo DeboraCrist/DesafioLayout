@@ -14,7 +14,7 @@ class Carde2 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(17),
-          color: Colores.carde,
+          color: Cores.carde,
           boxShadow: [
             BoxShadow(
               color: const Color.fromARGB(255, 170, 167, 170).withOpacity(0.8),
@@ -32,7 +32,7 @@ class Carde2 extends StatelessWidget {
             const Icon(
               Icons.shop_2,
               size: 65,
-              color: Colores.primaria,
+              color: Cores.primaria,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
