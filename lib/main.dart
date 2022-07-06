@@ -5,6 +5,7 @@ import 'ui/elementos/card1.dart';
 import 'ui/elementos/card2.dart';
 import 'ui/estilo/cores.dart';
 import 'ui/elementos/botao.dart';
+import 'ui/estilo/temas.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,25 +18,11 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-ThemeData _temaClaro = ThemeData(
-    // ignore: deprecated_member_use
-    accentColor: const Color.fromARGB(255, 52, 36, 192),
-    brightness: Brightness.light,
-    primaryColor: Colors.blue);
-
-ThemeData _temaEscuro = ThemeData(
-  // ignore: deprecated_member_use
-  accentColor: Colors.pink,
-  brightness: Brightness.dark,
-  primaryColor: Colors.amber,
-);
-
-bool _claro = true;
-
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   int _indiceAtual = 0;
   Icon _olhoEsconde = const Icon(Icons.visibility);
   bool aoclicar = false;
+  bool _claro = true;
 
   late AnimationController controladorAnimado;
   late Animation umaTranslacaoAnimada;
@@ -61,8 +48,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: _claro ? _temaClaro : _temaEscuro,
-      debugShowCheckedModeBanner: false,
+      theme: _claro ? tema : temaNoturno,
       home: Scaffold(
         body: Stack(
           children: [
@@ -224,7 +210,6 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ],
         ),
         bottomNavigationBar: BottomNavyBar(
-          backgroundColor: Colors.white,
           selectedIndex: _indiceAtual,
           showElevation: false,
           itemCornerRadius: 15,

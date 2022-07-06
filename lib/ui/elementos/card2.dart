@@ -32,7 +32,6 @@ class Carde2 extends StatelessWidget {
             const Icon(
               Icons.shop_2,
               size: 65,
-              color: Cores.primaria,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,

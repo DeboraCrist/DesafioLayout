@@ -54,7 +54,6 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.shop_2,
                   size: 47,
-                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,7 +84,6 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.people_alt,
                   size: 45,
-                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +114,6 @@ class Carde1 extends StatelessWidget {
                 const Icon(
                   Icons.location_city,
                   size: 45,
-                  color: Cores.primaria,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
